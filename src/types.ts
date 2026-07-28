@@ -9,7 +9,7 @@ export type KitType = "wooden" | "maisemore" | "bs_poly";
 export type HiveBox =
   | { section: "excluder"; count: number }
   | { section: "super" | "brood"; kitType: KitType; count: number };
-
+ 
 export interface Hive {
   id: string;
   hiveNumber: number;
