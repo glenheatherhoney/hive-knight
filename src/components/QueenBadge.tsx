@@ -29,7 +29,7 @@ export function QueenBadge({ code }: QueenBadgeProps) {
       <svg width="36" height="22" viewBox="0 0 36 22" aria-label="Queen wings">
         {/* Left wing */}
         <g
-          style={clipped ? { clipPath: "inset(50% 50% 0 0)" } : undefined}
+          style={clipped ? { clipPath: "inset(0 50% 50% 0)" } : undefined}
         >
           <path
             d="M18 4 C 13 4, 7 7, 2 13 C 6 14, 12 14, 16 11 C 17 10, 18 8, 18 4 Z"
