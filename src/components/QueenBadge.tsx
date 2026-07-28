@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { Crown } from "lucide-react";
 import type { QueenCode } from "@/types";
 
@@ -18,6 +19,7 @@ export function QueenBadge({ code }: QueenBadgeProps) {
   const clipped = code[1] === "C";
   const colorLetter = code[2];
   const color = colorMap[colorLetter] ?? "#78716C";
+  const clipId = useId();
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-0.5">
@@ -27,10 +29,15 @@ export function QueenBadge({ code }: QueenBadgeProps) {
         style={{ color }}
       />
       <svg width="36" height="22" viewBox="0 0 36 22" aria-label="Queen wings">
+        {clipped && (
+          <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
+            {/* Keep the top of the left wing (including the connection point at 18,4),
+                cut diagonally to remove the lower-left portion */}
+            <polygon points="0,0 18,0 18,9 0,15" />
+          </clipPath>
+        )}
         {/* Left wing */}
-        <g
-          style={clipped ? { clipPath: "inset(0 50% 50% 0)" } : undefined}
-        >
+        <g clipPath={clipped ? `url(#${clipId})` : undefined}>
           <path
             d="M18 4 C 13 4, 7 7, 2 13 C 6 14, 12 14, 16 11 C 17 10, 18 8, 18 4 Z"
             fill={color}
