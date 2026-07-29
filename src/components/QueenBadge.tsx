@@ -41,7 +41,7 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
     <circle
       cx="14"
       cy="1.6"
-      r="2.7"
+      r="2.0"
       fill={isPresumed ? "none" : "#1c1917"}
       stroke="#1c1917"
       strokeWidth="0.7"
@@ -50,7 +50,7 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
     <circle
       cx="22"
       cy="1.6"
-      r="2.7"
+      r="2.0"
       fill={isPresumed ? "none" : "#1c1917"}
       stroke="#1c1917"
       strokeWidth="0.7"
@@ -62,7 +62,7 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
           x="14"
           y="4.5"
           textAnchor="middle"
-          fontSize="5"
+          fontSize="6"
           fontWeight="700"
           fill="#1c1917"
         >
