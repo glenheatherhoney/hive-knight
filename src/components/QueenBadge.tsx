@@ -32,7 +32,7 @@ export function QueenBadge({ code }: QueenBadgeProps) {
         {clipped && (
   <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
     {/* Keep the inner half of the left wing (near the body), cut at the midpoint */}
-    <polygon points="10,0 18,0 18,16 10,16" />
+    <polygon points="11,0 18,0 18,15 8,15" />
   </clipPath>
 )}
         {/* Left wing */}
