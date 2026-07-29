@@ -52,13 +52,13 @@ export function HiveRow({ hive, onClick }: HiveRowProps) {
         </button>
 
         {/* Queen badge */}
-        <button
-          onClick={() => onClick(`Queen ${hive.queen}`)}
-          className={ICON_BTN}
-          aria-label={`Queen ${hive.queenCode}`}
-        >
-          <QueenBadge code={hive.queen} />
-        </button>
+<button
+  onClick={() => onClick(`Queen ${hive.queen.lastObservation}`)}
+  className={ICON_BTN}
+  aria-label={`Queen ${hive.queen.lastObservation}`}
+>
+  <QueenBadge queen={hive.queen} />
+</button>
 
         {/* Temperament */}
         <button
