@@ -30,12 +30,11 @@ export function QueenBadge({ code }: QueenBadgeProps) {
       />
       <svg width="36" height="22" viewBox="0 0 36 22" aria-label="Queen wings">
         {clipped && (
-          <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
-            {/* Keep the top of the left wing (including the connection point at 18,4),
-                cut diagonally to remove the lower-left portion */}
-            <polygon points="0,0 18,0 18,9 0,15" />
-          </clipPath>
-        )}
+  <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
+    {/* Keep the inner half of the left wing (near the body), cut at the midpoint */}
+    <polygon points="10,0 18,0 18,16 10,16" />
+  </clipPath>
+)}
         {/* Left wing */}
         <g clipPath={clipped ? `url(#${clipId})` : undefined}>
           <path
