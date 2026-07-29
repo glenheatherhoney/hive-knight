@@ -35,21 +35,53 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
 
       <svg width="36" height="22" viewBox="0 0 36 22" aria-label="Queen status">
         {/* Eyes */}
-        {(isSeen || isPresumed) && (
-          <g>
-            {/* Left eye */}
-            <circle cx="14" cy="3.5" r="1.4" fill={isPresumed ? "none" : "#1c1917"} stroke="#1c1917" strokeWidth="0.7" />
-            {/* Right eye */}
-            <circle cx="22" cy="3.5" r="1.4" fill={isPresumed ? "none" : "#1c1917"} stroke="#1c1917" strokeWidth="0.7" />
-            {/* Question marks for presumed */}
-            {isPresumed && (
-              <>
-                <text x="14" y="5.2" textAnchor="middle" fontSize="4.5" fontWeight="700" fill="#1c1917">?</text>
-                <text x="22" y="5.2" textAnchor="middle" fontSize="4.5" fontWeight="700" fill="#1c1917">?</text>
-              </>
-            )}
-          </g>
-        )}
+{(isSeen || isPresumed) && (
+  <g>
+    {/* Left eye */}
+    <circle
+      cx="14"
+      cy="2.6"
+      r="1.7"
+      fill={isPresumed ? "none" : "#1c1917"}
+      stroke="#1c1917"
+      strokeWidth="0.7"
+    />
+    {/* Right eye */}
+    <circle
+      cx="22"
+      cy="2.6"
+      r="1.7"
+      fill={isPresumed ? "none" : "#1c1917"}
+      stroke="#1c1917"
+      strokeWidth="0.7"
+    />
+    {/* Question marks for presumed */}
+    {isPresumed && (
+      <>
+        <text
+          x="14"
+          y="4.5"
+          textAnchor="middle"
+          fontSize="5"
+          fontWeight="700"
+          fill="#1c1917"
+        >
+          ?
+        </text>
+        <text
+          x="22"
+          y="4.5"
+          textAnchor="middle"
+          fontSize="5"
+          fontWeight="700"
+          fill="#1c1917"
+        >
+          ?
+        </text>
+      </>
+    )}
+  </g>
+)}
 
         {/* Virgin → big V */}
         {isVirgin && (
