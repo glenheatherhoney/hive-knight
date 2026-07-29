@@ -41,7 +41,7 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
     <circle
       cx="14"
       cy="1.6"
-      r="1.7"
+      r="2.7"
       fill={isPresumed ? "none" : "#1c1917"}
       stroke="#1c1917"
       strokeWidth="0.7"
@@ -49,8 +49,8 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
     {/* Right eye */}
     <circle
       cx="22"
-      cy="2.6"
-      r="1.7"
+      cy="1.6"
+      r="2.7"
       fill={isPresumed ? "none" : "#1c1917"}
       stroke="#1c1917"
       strokeWidth="0.7"
