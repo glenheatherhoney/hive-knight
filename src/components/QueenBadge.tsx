@@ -48,7 +48,7 @@ export function QueenBadge({ code }: QueenBadgeProps) {
           <path
             d="M17 5 C 13 6, 9 8, 4 12"
             fill="none"
-            stroke="#000000"
+            stroke="#000033"
             strokeWidth="0.4"
           />
         </g>
@@ -65,7 +65,7 @@ export function QueenBadge({ code }: QueenBadgeProps) {
           <path
             d="M19 5 C 23 6, 27 8, 32 12"
             fill="none"
-            stroke="#000000"
+            stroke="#000033"
             strokeWidth="0.4"
           />
         </g>
