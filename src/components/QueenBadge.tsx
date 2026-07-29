@@ -40,7 +40,7 @@ export function QueenBadge({ queen }: QueenBadgeProps) {
     {/* Left eye */}
     <circle
       cx="14"
-      cy="2.6"
+      cy="1.6"
       r="1.7"
       fill={isPresumed ? "none" : "#1c1917"}
       stroke="#1c1917"
