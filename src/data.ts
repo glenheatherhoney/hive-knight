@@ -35,6 +35,7 @@ import type { Hive } from "@/types";
 export const sampleHives: Hive[] = [
   {
     id: "h1",
+    apiaryId: "a1",
     hiveNumber: 1,
     boxes: [
       { section: "super", kitType: "wooden", count: 1 },
@@ -49,6 +50,7 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h2",
+    apiaryId: "a1",
     hiveNumber: 2,
     boxes: [
       { section: "super", kitType: "wooden", count: 1 },
@@ -63,6 +65,7 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h3",
+    apiaryId: "a1",
     hiveNumber: 3,
     boxes: [
       { section: "excluder", count: 1 },
@@ -76,6 +79,7 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h4",
+    apiaryId: "a1",
     hiveNumber: 4,
     boxes: [
       { section: "super", kitType: "wooden", count: 2 },
@@ -90,6 +94,7 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h5",
+    apiaryId: "a1",
     hiveNumber: 5,
     boxes: [
       { section: "brood", kitType: "maisemore", count: 3 },
