@@ -20,3 +20,15 @@ export interface Hive {
   inspection: InspectionStatus;
   lastInspection: string;
 }
+
+export interface Hive {
+  id: string;
+  apiaryId: string;          // ← add this
+  hiveNumber: number;
+  boxes: HiveBox[];
+  queen: QueenInfo;
+  temperament: string;
+  diseaseStatus: string;
+  inspection: InspectionStatus;
+  lastInspection: string;
+}
