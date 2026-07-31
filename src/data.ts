@@ -1,5 +1,5 @@
 import type { Apiary } from "@/types";
-import drumsPhoto from "@/assets/drums.jpg"
+import drumsPhoto from "@/images/drums.jpg"
 
 export const sampleApiaries: Apiary[] = [
   {
