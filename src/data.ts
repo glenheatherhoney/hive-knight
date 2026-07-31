@@ -1,11 +1,12 @@
 import type { Apiary } from "@/types";
+import drumsPhoto from "@/assets/drums.jpg"
 
 export const sampleApiaries: Apiary[] = [
   {
     id: "a1",
     name: "Drums",
     location: "Langbank, Renfrewshire",
-    photoUrl: "/src/images/drums.jpg", // replace with a real image later
+    photoUrl: drumsPhoto,
     todos: [
       "Bring 4 brood boxes with drawn comb",
       "Bring 1 super",
