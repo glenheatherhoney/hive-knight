@@ -9,12 +9,7 @@ export const sampleHives: Hive[] = [
       { section: "excluder", count: 1 },
       { section: "brood", kitType: "wooden", count: 2 },
     ],
-    queen: {
-      clipped: true,
-      colour: "B",
-      year: 2025,
-      lastObservation: "seen",          // Queen seen + clipped + blue
-    },
+    queenCode: "QCB",
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "LEAVE",
@@ -28,12 +23,7 @@ export const sampleHives: Hive[] = [
       { section: "super", kitType: "maisemore", count: 1 },
       { section: "brood", kitType: "bs_poly", count: 1 },
     ],
-    queen: {
-      clipped: false,
-      colour: "G",
-      year: 2025,
-      lastObservation: "not_seen",      // Queen not seen (unclipped green)
-    },
+    queenCode: "QUG",
     temperament: "ACTIVE",
     diseaseStatus: "CLEAN",
     inspection: "URGENT",
@@ -46,12 +36,7 @@ export const sampleHives: Hive[] = [
       { section: "excluder", count: 1 },
       { section: "brood", kitType: "bs_poly", count: 1 },
     ],
-    queen: {
-      clipped: true,
-      colour: "Y",
-      year: 2024,
-      lastObservation: "virgin_seen",   // Virgin seen
-    },
+    queenCode: "QCY",
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "DUE",
@@ -65,12 +50,7 @@ export const sampleHives: Hive[] = [
       { section: "excluder", count: 1 },
       { section: "brood", kitType: "wooden", count: 1 },
     ],
-    queen: {
-      clipped: true,
-      colour: "R",
-      year: 2025,
-      lastObservation: "queenless_presumed", // Queenless (keeps previous colour/clipped)
-    },
+    queenCode: "QCR",
     temperament: "DEFENSIVE",
     diseaseStatus: "AFB",
     inspection: "URGENT",
@@ -82,12 +62,7 @@ export const sampleHives: Hive[] = [
     boxes: [
       { section: "brood", kitType: "maisemore", count: 3 },
     ],
-    queen: {
-      clipped: false,
-      colour: "P",
-      year: 2025,
-      lastObservation: "virgin_presumed", // Virgin presumed
-    },
+    queenCode: "QUP",
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "MONITOR",
