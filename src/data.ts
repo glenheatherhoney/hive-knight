@@ -1,41 +1,8 @@
-import type { Apiary } from "@/types";
-
-export const sampleApiaries: Apiary[] = [
-  {
-    id: "a1",
-    name: "Drums",
-    location: "Langbank, Renfrewshire",
-    photoUrl: undefined, // replace with a real image later
-    todos: [
-      "Bring 4 brood boxes with drawn comb",
-      "Bring 1 super",
-      "Hive 4 queenless",
-    ],
-    weather: {
-      highTemp: 18,
-      lowTemp: 10,
-      highWind: 8,
-      lowWind: 3,
-      windDirection: 225, // SW-ish
-      icon: "partly",
-    },
-    lastVisit: "8th May",
-    isMixed: true,
-    counts: {
-      total: 12,
-      hive: 8,
-      nuc: 3,
-      apidea: 1,
-    },
-  },
-];
-
 import type { Hive } from "@/types";
 
 export const sampleHives: Hive[] = [
   {
     id: "h1",
-    apiaryId: "a1",
     hiveNumber: 1,
     boxes: [
       { section: "super", kitType: "wooden", count: 1 },
@@ -50,7 +17,6 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h2",
-    apiaryId: "a1",
     hiveNumber: 2,
     boxes: [
       { section: "super", kitType: "wooden", count: 1 },
@@ -65,7 +31,6 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h3",
-    apiaryId: "a1",
     hiveNumber: 3,
     boxes: [
       { section: "excluder", count: 1 },
@@ -79,7 +44,6 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h4",
-    apiaryId: "a1",
     hiveNumber: 4,
     boxes: [
       { section: "super", kitType: "wooden", count: 2 },
@@ -94,7 +58,6 @@ export const sampleHives: Hive[] = [
   },
   {
     id: "h5",
-    apiaryId: "a1",
     hiveNumber: 5,
     boxes: [
       { section: "brood", kitType: "maisemore", count: 3 },
