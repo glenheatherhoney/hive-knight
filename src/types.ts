@@ -12,6 +12,7 @@ export type HiveBox =
  
 export interface Hive {
   id: string;
+  apiaryId: string;
   hiveNumber: number;
   boxes: HiveBox[];
   queenCode: QueenCode;
