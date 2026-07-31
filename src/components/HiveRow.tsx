@@ -53,11 +53,11 @@ export function HiveRow({ hive, onClick }: HiveRowProps) {
 
         {/* Queen badge */}
         <button
-          onClick={() => onClick(`Queen ${hive.queenCode}`)}
+          onClick={() => onClick(`Queen ${hive.queen.lastObservation}`)}
           className={ICON_BTN}
-          aria-label={`Queen ${hive.queenCode}`}
+          aria-label={`Queen ${hive.queen.lastObservation}`}
         >
-          <QueenBadge code={hive.queenCode} />
+          <QueenBadge queen={hive.queen} />
         </button>
 
         {/* Temperament */}
