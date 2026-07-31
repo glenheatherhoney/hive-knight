@@ -5,7 +5,7 @@ export const sampleApiaries: Apiary[] = [
     id: "a1",
     name: "Drums",
     location: "Langbank, Renfrewshire",
-    photoUrl: undefined, // replace with a real image later
+    photoUrl: "/images/drums.jpg", // replace with a real image later
     todos: [
       "Bring 4 brood boxes with drawn comb",
       "Bring 1 super",
