@@ -5,6 +5,8 @@ import { HiveDiagram } from "@/components/HiveDiagram";
 import { QueenBadge } from "@/components/QueenBadge";
 import { BroodBadge } from "@/components/BroodBadge";
 
+const disease = diseaseConfig[hive.diseaseStatus];
+
 interface HiveRowProps {
   hive: Hive;
   onClick: (label: string) => void;
@@ -88,10 +90,10 @@ export function HiveRow({ hive, onClick }: HiveRowProps) {
           className={ICON_BTN}
           aria-label={`Disease status ${hive.diseaseStatus}`}
         >
-          <Stethoscope className={`h-4 w-4 ${diseaseColor[hive.diseaseStatus] ?? "text-stone-700"}`} />
-          <span className="text-[7px] font-semibold uppercase tracking-wide text-stone-500">
-            {hive.diseaseStatus}
-          </span>
+          <Stethoscope className={`h-4 w-4 ${disease.color}`} />
+            <span className="text-[7px] font-semibold uppercase tracking-wide text-stone-500">
+              {disease.label}
+            </span>
         </button>
 
         {/* Inspection */}
