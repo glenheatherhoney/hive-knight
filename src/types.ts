@@ -29,15 +29,15 @@ export interface QueenInfo {
 
 /** Individual diseases that can be recorded on an inspection */
 export type DiseaseCode =
-  | "chalk"   // Chalkbrood
-  | "sac"     // Sacbrood
-  | "dwv"     // Deformed Wing Virus
-  | "cbpv"    // Chronic Bee Paralysis Virus
-  | "efb"     // European Foulbrood
-  | "afb";    // American Foulbrood
+  | "CHALK"   // Chalkbrood
+  | "SAC"     // Sacbrood
+  | "DWV"     // Deformed Wing Virus
+  | "CBPV"    // Chronic Bee Paralysis Virus
+  | "EFB"     // European Foulbrood
+  | "AFB";    // American Foulbrood
 
 /** Hive-level rollup status (derived from history) */
-export type DiseaseStatus = "clean" | "disease" | "foul";
+export type DiseaseStatus = "CLEAN" | "DISEASE" | "FOUL";
 
 export interface Hive {
   id: string;
