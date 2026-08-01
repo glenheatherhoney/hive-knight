@@ -83,3 +83,53 @@ export interface Apiary {
   isMixed: boolean;
   counts: ApiaryCounts;
 }
+
+// inspection history and form types
+
+export type SwarmStatus = "ec" | "lc" | "sc" | "tc" | "oc" | "ca" | "pa";
+export type Quality = "*" | "~" | "¬" | "^";
+export type Temperament = "hindo" | "calm" | "skitty" | "shitty" | "bastards";
+export type HoneyStores = "light" | "decent" | "bound";
+export type PollenStores = "poor" | "ok" | "great";
+export type ExcluderAction = "x+" | "x-" | "dx" | "dm" | "rdm";
+export type VarroaStatus = "vrs" | "vrns" | number;
+export type InspectionType = "nch" | "qch" | "fch";
+
+export interface BoxChange {
+  section: "super" | "brood";
+  kitType?: KitType;
+  count: number; // + added, - removed
+}
+
+export interface Inspection {
+  id: string;
+  hiveId: string;
+  date: string;          // ISO
+  displayDate: string;   // "15-5"
+
+  queen?: QueenInfo;
+  brood?: BroodStatus[];
+  swarm?: SwarmStatus[];
+  quality?: Quality;
+  diseases?: DiseaseCode[];   // ← multiple diseases possible on one visit
+  temperament?: Temperament;
+
+  boxChanges?: BoxChange[];
+  excluder?: ExcluderAction;
+
+  honeyStores?: HoneyStores;
+  pollenStores?: PollenStores;
+
+  varroa?: VarroaStatus;
+  varroaTreatment?: "+vr" | "-vr";
+  spray?: "sp";
+  essentialOil?: "sh";
+  pollenPatty?: boolean;
+  vitaminPatty?: boolean;
+
+  inspectionType?: InspectionType;
+  harvest?: string;
+  cellActions?: string[];
+
+  notes?: string;
+}
