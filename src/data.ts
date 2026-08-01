@@ -49,7 +49,6 @@ export const sampleHives: Hive[] = [
       year: 2025,
       lastObservation: "seen",          // Queen seen + clipped + blue
     },
-    brood:["e","l","c","d"],
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "LEAVE",
