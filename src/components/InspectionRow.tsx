@@ -31,7 +31,7 @@ export function InspectionRow({ inspection, onClick }: Props) {
 
   return (
     <div className="rounded-xl border border-stone-200 bg-stone-50 px-2 py-2">
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5">
+      <div className="flex flex-wrap items-center gap-1.5">
         {/* 1. Date */}
         <button className={BTN} onClick={() => onClick(`Date ${i.displayDate}`)}>
           <span className="text-xs font-bold leading-none text-stone-800">
