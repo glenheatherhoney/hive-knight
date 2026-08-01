@@ -18,6 +18,7 @@ const ICON_BTN =
 export function HiveRow({ hive, onClick }: HiveRowProps) {
   const insp = inspectionConfig[hive.inspection];
   const InspIcon = insp.icon;
+  const disease = diseaseConfig[hive.diseaseStatus];
 
   const boxSummary = hive.boxes
     .map((b) =>
