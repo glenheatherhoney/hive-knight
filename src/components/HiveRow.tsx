@@ -3,6 +3,7 @@ import { HeartPulse, Stethoscope, CalendarDays } from "lucide-react";
 import { inspectionConfig, diseaseColor, temperamentColor, kitConfig } from "@/icons";
 import { HiveDiagram } from "@/components/HiveDiagram";
 import { QueenBadge } from "@/components/QueenBadge";
+import { BroodBadge } from "@/components/BroodBadge";
 
 interface HiveRowProps {
   hive: Hive;
