@@ -27,17 +27,31 @@ export interface QueenInfo {
   lastObservation: QueenObservation;
 }
 
+/** Individual diseases that can be recorded on an inspection */
+export type DiseaseCode =
+  | "chalk"   // Chalkbrood
+  | "sac"     // Sacbrood
+  | "dwv"     // Deformed Wing Virus
+  | "cbpv"    // Chronic Bee Paralysis Virus
+  | "efb"     // European Foulbrood
+  | "afb";    // American Foulbrood
+
+/** Hive-level rollup status (derived from history) */
+export type DiseaseStatus = "clean" | "disease" | "foul";
+
 export interface Hive {
   id: string;
   apiaryId: string;
   hiveNumber: number;
   boxes: HiveBox[];
-  queen: QueenInfo;                 // ← replaced queenCode
-  brood: BroodStatus[];
+  queen: QueenInfo;
   temperament: string;
-  diseaseStatus: string;
+  diseaseStatus: DiseaseStatus;     // ← rollup only
+  // later you will also store the actual history, e.g.:
+  // diseaseHistory: { date: string; diseases: DiseaseCode[] }[];
   inspection: InspectionStatus;
   lastInspection: string;
+  brood: BroodStatus[];
 }
 
 export type WeatherIcon = "sunny" | "partly" | "cloudy" | "rain" | "overcast";
