@@ -112,7 +112,7 @@ function App() {
       )}
 
       {/* ========== INSPECTION HISTORY ========== */}
-      {view === "history" && selectedHive && (
+      {view === "history" && selectedHive && selectedApiary && (
         <>
           <div className="sticky top-0 z-20 bg-stone-100/95 backdrop-blur px-3 pt-2 pb-2">
             <button
@@ -120,13 +120,14 @@ function App() {
               className="mb-2 flex items-center gap-1 text-sm font-medium text-amber-800"
             >
               <ChevronLeft className="h-4 w-4" />
-              Hive {selectedHive.hiveNumber}
+              {selectedApiary.name}
             </button>
+      
             <h2 className="text-lg font-bold text-stone-800">
-              Inspection History
+              Hive {selectedHive.hiveNumber} Inspection History
             </h2>
           </div>
-
+      
           <main className="mx-auto max-w-md space-y-2 px-3 py-3">
             {inspectionsForHive.length === 0 ? (
               <p className="py-8 text-center text-stone-500">
