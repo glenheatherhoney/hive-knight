@@ -10,6 +10,7 @@ import { diseaseConfig } from "@/icons";
 interface HiveRowProps {
   hive: Hive;
   onClick: (label: string) => void;
+  onOpenHistory?: (hive: Hive) => void;
 }
 
 const ICON_BTN =
