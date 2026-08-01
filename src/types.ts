@@ -1,3 +1,5 @@
+export type BroodStatus = "e" | "l" | "c" | "d";
+
 export type InspectionStatus = "URGENT" | "DUE" | "LEAVE" | "MONITOR";
 
 export type HiveSection = "super" | "excluder" | "brood";
