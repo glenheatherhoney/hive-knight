@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { sampleApiaries, sampleHives } from "@/data";
+import { sampleApiaries, sampleHives, sampleInspections } from "@/data";
 import { ApiaryRow } from "@/components/ApiaryRow";
 import { HiveRow } from "@/components/HiveRow";
+import { InspectionRow } from "@/components/InspectionRow";
 import { Flower2, ChevronLeft } from "lucide-react";
-import type { Apiary } from "@/types";
+import type { Apiary, Hive } from "@/types";
 
 type View = "apiaries" | "hives" | "history";
 
 function App() {
   const [view, setView] = useState<View>("apiaries");
   const [selectedApiary, setSelectedApiary] = useState<Apiary | null>(null);
+  const [selectedHive, setSelectedHive] = useState<Hive | null>(null);
   const [toast, setToast] = useState<string | null>(null);
 
   const handleClick = (label: string) => {
@@ -23,18 +25,35 @@ function App() {
     setView("hives");
   };
 
-  const goBack = () => {
+  const openHistory = (hive: Hive) => {
+    setSelectedHive(hive);
+    setView("history");
+  };
+
+  const goBackToApiaries = () => {
     setView("apiaries");
     setSelectedApiary(null);
+    setSelectedHive(null);
+  };
+
+  const goBackToHives = () => {
+    setView("hives");
+    setSelectedHive(null);
   };
 
   const hivesForApiary = selectedApiary
     ? sampleHives.filter((h) => h.apiaryId === selectedApiary.id)
     : [];
 
+  const inspectionsForHive = selectedHive
+    ? sampleInspections
+        .filter((ins) => ins.hiveId === selectedHive.id)
+        .sort((a, b) => b.date.localeCompare(a.date))
+    : [];
+
   return (
     <div className="min-h-screen bg-stone-100 pb-24">
-      {/* ========== APIARY LIST (start page) ========== */}
+      {/* ========== APIARY LIST ========== */}
       {view === "apiaries" && (
         <>
           <header className="sticky top-0 z-10 border-b border-stone-200 bg-stone-50/90 backdrop-blur">
@@ -65,31 +84,61 @@ function App() {
         </>
       )}
 
-      {/* ========== HIVE LIST (with fixed apiary header) ========== */}
+      {/* ========== HIVE LIST ========== */}
       {view === "hives" && selectedApiary && (
         <>
-          {/* Sticky apiary header */}
           <div className="sticky top-0 z-20 bg-stone-100/95 backdrop-blur pt-2 pb-1 px-3">
             <button
-              onClick={goBack}
+              onClick={goBackToApiaries}
               className="mb-2 flex items-center gap-1 text-sm font-medium text-amber-800"
             >
               <ChevronLeft className="h-4 w-4" />
               All apiaries
             </button>
-
             <ApiaryRow apiary={selectedApiary} onClick={handleClick} />
           </div>
 
-          {/* Hive rows */}
           <main className="mx-auto max-w-md space-y-3 px-3 py-4">
-            {hivesForApiary.length === 0 ? (
-              <p className="text-center text-stone-500 py-8">
-                No hives recorded yet
+            {hivesForApiary.map((hive) => (
+              <HiveRow
+                key={hive.id}
+                hive={hive}
+                onClick={handleClick}
+                onOpenHistory={openHistory}   // ← this is the key link
+              />
+            ))}
+          </main>
+        </>
+      )}
+
+      {/* ========== INSPECTION HISTORY ========== */}
+      {view === "history" && selectedHive && (
+        <>
+          <div className="sticky top-0 z-20 bg-stone-100/95 backdrop-blur px-3 pt-2 pb-2">
+            <button
+              onClick={goBackToHives}
+              className="mb-2 flex items-center gap-1 text-sm font-medium text-amber-800"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Hive {selectedHive.hiveNumber}
+            </button>
+            <h2 className="text-lg font-bold text-stone-800">
+              Inspection History
+            </h2>
+          </div>
+
+          <main className="mx-auto max-w-md space-y-2 px-3 py-3">
+            {inspectionsForHive.length === 0 ? (
+              <p className="py-8 text-center text-stone-500">
+                No inspections recorded yet
               </p>
             ) : (
-              hivesForApiary.map((hive) => (
-                <HiveRow key={hive.id} hive={hive} onClick={handleClick} />
+              inspectionsForHive.map((ins) => (
+                <InspectionRow
+                  key={ins.id}
+                  inspection={ins}
+                  onClick={handleClick}
+                />
               ))
             )}
           </main>
