@@ -60,6 +60,15 @@ export function HiveRow({ hive, onClick }: HiveRowProps) {
           <QueenBadge queen={hive.queen} />
         </button>
 
+        {/* Brood status */}
+        <button
+          onClick={() => onClick(`Brood ${hive.brood?.join("") || "?"}`)}
+          className={ICON_BTN}
+          aria-label={`Brood status ${hive.brood?.join(", ") || "unknown"}`}
+        >
+          <BroodBadge brood={hive.brood ?? []} />
+        </button>
+        
         {/* Temperament */}
         <button
           onClick={() => onClick(`Temperament ${hive.temperament}`)}
