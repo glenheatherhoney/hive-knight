@@ -5,7 +5,7 @@ import { HiveRow } from "@/components/HiveRow";
 import { Flower2, ChevronLeft } from "lucide-react";
 import type { Apiary } from "@/types";
 
-type View = "apiaries" | "hives";
+type View = "apiaries" | "hives" | "history";
 
 function App() {
   const [view, setView] = useState<View>("apiaries");
