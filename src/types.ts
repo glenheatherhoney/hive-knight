@@ -84,7 +84,7 @@ export interface Apiary {
   counts: ApiaryCounts;
 }
 
-// inspection history and form types
+// inspection history and form types 
 
 export type SwarmStatus = "ec" | "lc" | "sc" | "tc" | "oc" | "ca" | "pa";
 export type Quality = "*" | "~" | "¬" | "^";
