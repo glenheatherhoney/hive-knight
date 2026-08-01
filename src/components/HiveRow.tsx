@@ -6,7 +6,6 @@ import { QueenBadge } from "@/components/QueenBadge";
 import { BroodBadge } from "@/components/BroodBadge";
 import { diseaseConfig } from "@/icons";
 
-const disease = diseaseConfig[hive.diseaseStatus];
 
 interface HiveRowProps {
   hive: Hive;
