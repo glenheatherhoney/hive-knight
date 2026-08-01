@@ -47,12 +47,13 @@ export const sampleHives: Hive[] = [
       clipped: true,
       colour: "B",
       year: 2025,
-      lastObservation: "seen",          // Queen seen + clipped + blue
+      lastObservation: "seen",
     },
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "LEAVE",
     lastInspection: "15-5",
+    brood: ["e", "l", "c", "d"],   // All four
   },
   {
     id: "h2",
@@ -67,12 +68,13 @@ export const sampleHives: Hive[] = [
       clipped: false,
       colour: "G",
       year: 2025,
-      lastObservation: "not_seen",      // Queen not seen (unclipped green)
+      lastObservation: "not_seen",
     },
     temperament: "ACTIVE",
     diseaseStatus: "CLEAN",
     inspection: "URGENT",
     lastInspection: "02-5",
+    brood: ["e", "l", "c"],        // Eggs + larvae + capped
   },
   {
     id: "h3",
@@ -86,12 +88,13 @@ export const sampleHives: Hive[] = [
       clipped: true,
       colour: "Y",
       year: 2024,
-      lastObservation: "virgin_seen",   // Virgin seen
+      lastObservation: "virgin_seen",
     },
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "DUE",
     lastInspection: "10-5",
+    brood: ["e", "l"],             // Eggs + larvae only
   },
   {
     id: "h4",
@@ -106,12 +109,13 @@ export const sampleHives: Hive[] = [
       clipped: true,
       colour: "R",
       year: 2025,
-      lastObservation: "queenless_presumed", // Queenless (keeps previous colour/clipped)
+      lastObservation: "queenless_presumed",
     },
     temperament: "DEFENSIVE",
     diseaseStatus: "AFB",
     inspection: "URGENT",
     lastInspection: "28-4",
+    brood: [],                     // No record → shows ?
   },
   {
     id: "h5",
@@ -124,11 +128,12 @@ export const sampleHives: Hive[] = [
       clipped: false,
       colour: "P",
       year: 2025,
-      lastObservation: "virgin_presumed", // Virgin presumed
+      lastObservation: "virgin_presumed",
     },
     temperament: "CALM",
     diseaseStatus: "CLEAN",
     inspection: "MONITOR",
     lastInspection: "18-5",
+    brood: ["c", "d"],             // Capped + drones only
   },
 ];
