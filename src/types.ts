@@ -31,6 +31,7 @@ export interface Hive {
   hiveNumber: number;
   boxes: HiveBox[];
   queen: QueenInfo;                 // ← replaced queenCode
+  brood: BroodStatus[];
   temperament: string;
   diseaseStatus: string;
   inspection: InspectionStatus;
