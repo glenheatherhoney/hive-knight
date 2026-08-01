@@ -12,7 +12,7 @@ interface HiveRowProps {
   onClick: (label: string) => void;
   onOpenHistory?: (hive: Hive) => void;
 }
-
+ 
 const ICON_BTN =
   "flex h-12 w-12 shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl bg-white/80 shadow-sm ring-1 ring-stone-200 transition hover:bg-white active:scale-95";
 
