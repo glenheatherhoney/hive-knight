@@ -50,7 +50,7 @@ export const sampleHives: Hive[] = [
       lastObservation: "seen",
     },
     temperament: "CALM",
-    diseaseStatus: "CLEAN",
+    diseaseStatus: "clean",
     inspection: "LEAVE",
     lastInspection: "15-5",
     brood: ["e", "l", "c", "d"],   // All four
@@ -71,7 +71,7 @@ export const sampleHives: Hive[] = [
       lastObservation: "not_seen",
     },
     temperament: "ACTIVE",
-    diseaseStatus: "CLEAN",
+    diseaseStatus: "disease",
     inspection: "URGENT",
     lastInspection: "02-5",
     brood: ["e", "l", "c"],        // Eggs + larvae + capped
@@ -91,7 +91,7 @@ export const sampleHives: Hive[] = [
       lastObservation: "virgin_seen",
     },
     temperament: "CALM",
-    diseaseStatus: "CLEAN",
+    diseaseStatus: "clean",
     inspection: "DUE",
     lastInspection: "10-5",
     brood: ["e", "l"],             // Eggs + larvae only
@@ -112,7 +112,7 @@ export const sampleHives: Hive[] = [
       lastObservation: "queenless_presumed",
     },
     temperament: "DEFENSIVE",
-    diseaseStatus: "AFB",
+    diseaseStatus: "foul",
     inspection: "URGENT",
     lastInspection: "28-4",
     brood: [],                     // No record → shows ?
@@ -131,7 +131,7 @@ export const sampleHives: Hive[] = [
       lastObservation: "virgin_presumed",
     },
     temperament: "CALM",
-    diseaseStatus: "CLEAN",
+    diseaseStatus: "disease",
     inspection: "MONITOR",
     lastInspection: "18-5",
     brood: ["c", "d"],             // Capped + drones only
