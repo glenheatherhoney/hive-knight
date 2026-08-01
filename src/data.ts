@@ -137,3 +137,79 @@ export const sampleHives: Hive[] = [
     brood: ["c", "d"],             // Capped + drones only
   },
 ];
+
+
+//inspection data
+
+// src/data.ts (or inspections.ts)
+
+export const sampleInspections: Inspection[] = [
+  {
+    id: "i1",
+    hiveId: "h1",
+    date: "2025-05-15",
+    displayDate: "15-5",
+    queen: {
+      clipped: true,
+      colour: "B",
+      year: 2025,
+      lastObservation: "seen",
+    },
+    brood: ["e", "l", "c"],
+    swarm: ["sc"],
+    quality: "*",
+    diseases: [],                    // clean this visit
+    temperament: "calm",
+    honeyStores: "decent",
+    pollenStores: "great",
+    boxChanges: [{ section: "super", kitType: "wooden", count: 1 }],
+    inspectionType: "fch",
+    notes: "Strong build-up",
+  },
+  {
+    id: "i2",
+    hiveId: "h1",
+    date: "2025-05-02",
+    displayDate: "02-5",
+    queen: {
+      clipped: true,
+      colour: "B",
+      year: 2025,
+      lastObservation: "not_seen",
+    },
+    brood: ["e", "l"],
+    quality: "~",
+    diseases: ["chalk", "sac"],      // two diseases recorded
+    temperament: "calm",
+    honeyStores: "light",
+    pollenStores: "ok",
+    varroa: "vrns",
+    inspectionType: "qch",
+  },
+  {
+    id: "i3",
+    hiveId: "h1",
+    date: "2025-04-18",
+    displayDate: "18-4",
+    queen: {
+      clipped: true,
+      colour: "B",
+      year: 2025,
+      lastObservation: "seen",
+    },
+    brood: ["c", "d"],
+    swarm: ["ec", "lc"],
+    quality: "¬",
+    diseases: [],
+    temperament: "skitty",
+    boxChanges: [
+      { section: "brood", kitType: "wooden", count: -1 },
+      { section: "brood", kitType: "wooden", count: 1 },
+    ],
+    excluder: "dx",
+    varroa: 3,
+    varroaTreatment: "+vr",
+    inspectionType: "fch",
+    cellActions: ["cut21"],
+  },
+];
