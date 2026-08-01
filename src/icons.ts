@@ -43,11 +43,22 @@ export const inspectionConfig: Record<
   },
 };
 
-export const diseaseColor: Record<string, string> = {
-  CLEAN: "text-emerald-600",
-  AFB: "text-rose-600",
-  EFB: "text-orange-600",
-  VARROA: "text-amber-600",
+export const diseaseConfig: Record<
+  DiseaseStatus,
+  { color: string; label: string }
+> = {
+  clean: {
+    color: "text-emerald-600",   // green
+    label: "CLEAN",
+  },
+  disease: {
+    color: "text-amber-500",     // amber
+    label: "DISEASE",
+  },
+  foul: {
+    color: "text-rose-600",      // red
+    label: "FOUL",
+  },
 };
 
 export const temperamentColor: Record<string, string> = {
