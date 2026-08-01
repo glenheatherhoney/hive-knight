@@ -112,15 +112,21 @@ export function HiveRow({ hive, onClick }: HiveRowProps) {
 
         {/* Last inspection date */}
         <button
-          onClick={() => onClick(`Last inspection ${hive.lastInspection}`)}
-          className={ICON_BTN}
-          aria-label={`Last inspection ${hive.lastInspection}`}
-        >
-          <CalendarDays className="h-4 w-4 text-stone-500" />
-          <span className="text-[7px] font-semibold uppercase tracking-wide text-stone-500">
-            {hive.lastInspection}
-          </span>
-        </button>
+            onClick={() => {
+              if (onOpenHistory) {
+                onOpenHistory(hive);
+              } else {
+                onClick(`Last inspection ${hive.lastInspection}`);
+              }
+            }}
+            className={ICON_BTN}
+            aria-label={`Last inspection ${hive.lastInspection}`}
+          >
+            <CalendarDays className="h-4 w-4 text-stone-500" />
+            <span className="text-[7px] font-semibold uppercase tracking-wide text-stone-500">
+              {hive.lastInspection}
+            </span>
+          </button>
       </div>
     </div>
   );
