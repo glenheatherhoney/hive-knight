@@ -96,29 +96,37 @@ export function InspectionRow({ inspection, onClick }: Props) {
           </button>
         )}
 
-        {/* 6. Diseases – one icon per disease, thicker/bolder when high */}
+        {/* 6. Diseases – colour + weight by severity */}
         {i.diseases &&
           i.diseases.length > 0 &&
-          i.diseases.map((d) => (
-            <button
-              key={d.code}
-              className={BTN}
-              onClick={() => onClick(`Disease: ${d.code} (${d.severity})`)}
-            >
-              <Stethoscope
-                className={`h-4 w-4 text-amber-500 ${
-                  d.severity === "high" ? "stroke-[2.5]" : "stroke-[1.5]"
-                }`}
-              />
-              <span
-                className={`text-[8px] uppercase text-stone-500 ${
-                  d.severity === "high" ? "font-bold" : "font-semibold"
-                }`}
+          i.diseases.map((d) => {
+            const isHigh = d.severity === "high";
+        
+            return (
+              <button
+                key={d.code}
+                className={BTN}
+                onClick={() => onClick(`Disease: ${d.code} (${d.severity})`)}
               >
-                {d.code}
-              </span>
-            </button>
-          ))}
+                <Stethoscope
+                  className={`h-4 w-4 ${
+                    isHigh
+                      ? "text-rose-600 stroke-[2.5]"
+                      : "text-amber-500 stroke-[1.5]"
+                  }`}
+                />
+                <span
+                  className={`text-[8px] uppercase ${
+                    isHigh
+                      ? "font-bold text-rose-700"
+                      : "font-semibold text-stone-500"
+                  }`}
+                >
+                  {d.code}
+                </span>
+              </button>
+            );
+          })}
 
         {/* 7. Box changes */}
         {i.boxChanges && i.boxChanges.length > 0 && (
