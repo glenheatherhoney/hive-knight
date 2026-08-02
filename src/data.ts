@@ -195,7 +195,7 @@ export const sampleInspections: Inspection[] = [
     },
     brood: ["e", "l", "c"],
     swarm: ["sc"],
-    quality: "*",
+    quality: "^",
     diseases: [],                    // clean this visit
     temperament: "calm",
     honeyStores: "decent",
