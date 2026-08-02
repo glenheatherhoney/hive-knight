@@ -118,7 +118,7 @@ export interface Inspection {
   brood?: BroodStatus[];
   swarm?: SwarmStatus[];
   quality?: Quality;
-  diseases?: DiseaseCode[];   // ← multiple diseases possible on one visit
+  diseases?: InspectionDisease[];   // ← multiple diseases possible on one visit
   temperament?: Temperament;
 
   boxChanges?: BoxChange[];
