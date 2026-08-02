@@ -158,7 +158,11 @@ export const sampleInspections: Inspection[] = [
     brood: ["e", "l", "c", "d"],
     swarm: ["ec", "sc"],
     quality: "*",
-    diseases: ["chalk", "dwv"],
+    diseases: [
+      { code: "chalk", severity: "high" },
+      { code: "dwv", severity: "low" },
+      { code: "sac", severity: "high"}
+    ],
     temperament: "calm",
     boxChanges: [
       { section: "super", kitType: "wooden", count: 1 },
@@ -213,7 +217,10 @@ export const sampleInspections: Inspection[] = [
     },
     brood: ["e", "l"],
     quality: "~",
-    diseases: ["chalk", "sac"],      // two diseases recorded
+    diseases: [
+      { code: "chalk", severity: "high" },
+      { code: "sac", severity: "low" },
+    ],
     temperament: "calm",
     honeyStores: "light",
     pollenStores: "ok",
