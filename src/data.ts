@@ -239,7 +239,7 @@ export const sampleInspections: Inspection[] = [
       lastObservation: "seen",
     },
     brood: ["c", "d"],
-    swarm: ["ec", "lc", "sc"],
+    swarm: ["ec", "lc", "sc","tc","oc"],
     quality: "¬",
     diseases: [],
     temperament: "skitty",
