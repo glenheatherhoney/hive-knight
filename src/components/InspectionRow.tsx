@@ -96,18 +96,26 @@ export function InspectionRow({ inspection, onClick }: Props) {
           </button>
         )}
 
-        {/* 6. Diseases – one icon per disease (nothing shown when clean) */}
+        {/* 6. Diseases – one icon per disease, thicker/bolder when high */}
         {i.diseases &&
           i.diseases.length > 0 &&
           i.diseases.map((d) => (
             <button
-              key={d}
+              key={d.code}
               className={BTN}
-              onClick={() => onClick(`Disease: ${d}`)}
+              onClick={() => onClick(`Disease: ${d.code} (${d.severity})`)}
             >
-              <Stethoscope className="h-4 w-4 text-amber-500" />
-              <span className="text-[8px] font-semibold uppercase text-stone-500">
-                {d}
+              <Stethoscope
+                className={`h-4 w-4 text-amber-500 ${
+                  d.severity === "high" ? "stroke-[2.5]" : "stroke-[1.5]"
+                }`}
+              />
+              <span
+                className={`text-[8px] uppercase text-stone-500 ${
+                  d.severity === "high" ? "font-bold" : "font-semibold"
+                }`}
+              >
+                {d.code}
               </span>
             </button>
           ))}
