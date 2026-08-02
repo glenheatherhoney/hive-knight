@@ -27,6 +27,13 @@ export interface QueenInfo {
   lastObservation: QueenObservation;
 }
 
+export type DiseaseSeverity = "low" | "high";
+
+export interface InspectionDisease {
+  code: DiseaseCode;
+  severity: DiseaseSeverity;   // "low" | "high"
+}
+
 /** Individual diseases that can be recorded on an inspection */
 export type DiseaseCode =
   | "chalk"   // Chalkbrood
