@@ -96,8 +96,9 @@ export function InspectionRow({ inspection, onClick }: Props) {
           </button>
         )}
 
-        {/* 6. Diseases – one icon per disease recorded this visit */}
-        {i.diseases && i.diseases.length > 0 ? (
+        {/* 6. Diseases – one icon per disease (nothing shown when clean) */}
+        {i.diseases &&
+          i.diseases.length > 0 &&
           i.diseases.map((d) => (
             <button
               key={d}
@@ -109,18 +110,7 @@ export function InspectionRow({ inspection, onClick }: Props) {
                 {d}
               </span>
             </button>
-          ))
-        ) : (
-          <button
-            className={BTN}
-            onClick={() => onClick("Clean this visit")}
-          >
-            <Stethoscope className="h-4 w-4 text-emerald-600" />
-            <span className="text-[8px] font-semibold uppercase text-stone-500">
-              OK
-            </span>
-          </button>
-        )}
+          ))}
 
         {/* 7. Box changes */}
         {i.boxChanges && i.boxChanges.length > 0 && (
